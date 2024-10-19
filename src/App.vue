@@ -25,26 +25,16 @@
                 </a-space>
               </a-skeleton>
             </div>
-            <div class="vh_img_text with_value" v-else>
-              <section>
-                <a-input :error="item.fileItem.response.status != 200"
-                  :default-value="formateUrl(item.fileItem.response.data.link)" readonly size="mini"
-                  @click="item.fileItem.response.status == 200 && copyStr(formateUrl(item.fileItem.response.data.link))">
-                  <template #append v-if="item.fileItem.response.status == 200">URL</template>
-                </a-input>
-                <a-input :error="item.fileItem.response.status != 200"
-                  :default-value="`![${item.fileItem.name}](${formateUrl(item.fileItem.response.data.link)})`" readonly
-                  size="mini"
-                  @click="item.fileItem.response.status == 200 && copyStr(`![${item.fileItem.name}](${formateUrl(item.fileItem.response.data.link)})`)">
-                  <template #append v-if="item.fileItem.response.status == 200">Markdown</template>
-                </a-input>
-              </section>
-              <a-popover title="图片二维码">
-                <qrcode-vue class="qr" :value="formateUrl(item.fileItem.response.data.link)" :size="56" level="H" />
-                <template #content>
-                  <qrcode-vue class="qr" :value="formateUrl(item.fileItem.response.data.link)" :size="166" level="H" />
-                </template>
-              </a-popover>
+            <div class="vh_img_text" v-else>
+              <a-input :error="item.fileItem.response == 'Failed'" :default-value="item.fileItem.response" readonly
+                size="mini" @click="item.fileItem.response != 'Failed' && copyStr(item.fileItem.response)">
+                <template #append v-if="item.fileItem.response != 'Failed'">URL</template>
+              </a-input>
+              <a-input :error="item.fileItem.response == 'Failed'"
+                :default-value="`![${item.fileItem.name}](${item.fileItem.response})`" readonly size="mini"
+                @click="item.fileItem.response != 'Failed' && copyStr(`![${item.fileItem.name}](${item.fileItem.response})`)">
+                <template #append v-if="item.fileItem.response != 'Failed'">Markdown</template>
+              </a-input>
             </div>
           </div>
         </template>
@@ -64,16 +54,13 @@
   </a-watermark>
 </template>
 <script setup lang="ts">
-import { ref, nextTick } from 'vue'
+import { nextTick } from 'vue'
 import { Message } from '@arco-design/web-vue'
-import QrcodeVue from 'qrcode.vue'
 const ACTION_API = import.meta.env.VITE_IMG_API_URL;
 
 
 // 检查图片大小
-const fileName = ref('');
 const checkImageSizeFn = (file: any) => {
-  fileName.value = file.name
   const maxSize = 5 * 1024 * 1024;
   if (file.size > maxSize) {
     Message.error(`图片大小不能超过 ${maxSize / 1024 / 1024}MB`);
@@ -94,10 +81,6 @@ const copyStr = async (v: any) => {
     document.body.removeChild(i);
   }
   Message.success('Copy Success')
-}
-
-const formateUrl = (url: string) => {
-  return url.replace('i.imgur.com', `${window.location.hostname}/v2`);
 }
 
 // 上传完毕滚动到最下面

@@ -1,6 +1,6 @@
 # 骤雨重山图床
 
-> 在现代互联网环境中，快速稳定的图片访问是提升用户体验的重要因素之一。本文将介绍如何利用Cloudflare Pages部署稳定的无限图床Imgur，实现图片上传和访问，并进一步通过WordPress的WP.COM全球图片缓存进行加速，提高图片加载速度。可用于免费图片托管解决方案，Flickr 等替代品。
+> 在现代互联网环境中，快速稳定的图片访问是提升用户体验的重要因素之一。本文将介绍如何利用Cloudflare Pages部署稳定的无限图床Telegraph，实现图片上传和访问，并进一步通过WordPress的WP.COM全球图片缓存进行加速，提高图片加载速度。可用于免费图片托管解决方案，Flickr/imgur 等替代品。
 
 [English](https://github.com/uxiaohan/ZYCS-IMG) | 简体中文
 
@@ -8,7 +8,7 @@
 
 - [Cloudflare Pages](https://pages.cloudflare.com/) 是一个强大的静态网站托管服务，结合了 Cloudflare 的全球 CDN（内容分发网络）优势。
 
-- [Imgur](https://imgur.com/) 是一个免费优质的图床。
+- [Telegraph](https://telegra.ph/) 是一个简单而有效的匿名发布平台，可以用于快速上传和管理内容，特别是图片。
 
 - [WordPress 的全球图片缓存](https://01.wp.com/) 是一个高效的 CDN 服务，专门用于加速 WordPress 托管的图片内容。它利用全球分布的节点，将图片缓存并提供快速访问。
 
@@ -36,7 +36,7 @@
 
 ### 特点
 
-- 无限图片储存数量，你可以上传不限数量的图片到`Imgur`
+- 无限图片储存数量，你可以上传不限数量的图片到`Telegraph`
 
 - 无需购买服务器，托管于`Cloudflare Pages`上，每天10万次的请求
 

@@ -2,13 +2,13 @@
 
 English | [简体中文](https://github.com/uxiaohan/ZYCS-IMG/blob/main/README_CN.md)
 
-> In the modern Internet environment, fast and stable image access is one of the important factors to improve user experience. This article will introduce how to use Cloudflare Pages to deploy a stable unlimited image bed Imgur, realize image upload and access, and further accelerate through WordPress's WP.COM global image cache to improve image loading speed. It can be used for free image hosting solutions, alternatives such as Flickr.
+> In the modern Internet environment, fast and stable image access is one of the important factors to improve user experience. This article will introduce how to use Cloudflare Pages to deploy a stable unlimited image bed Telegraph, realize image upload and access, and further accelerate through WordPress's WP.COM global image cache to improve image loading speed. It can be used for free image hosting solutions, alternatives such as Flickr/imgur.
 
 ## Introduction
 
 - [Cloudflare Pages](https://pages.cloudflare.com/) is a powerful static website hosting service that combines the advantages of Cloudflare's global CDN (content distribution network).
 
-- [Imgur](https://imgur.com/) is a A free high-quality image hosting.
+- [Telegraph](https://telegra.ph/) is a simple and effective anonymous publishing platform that can be used to quickly upload and manage content, especially images.
 
 - [WordPress's global image cache](https://01.wp.com/) is an efficient CDN service specifically designed to accelerate WordPress-hosted image content. It uses globally distributed nodes to cache images and provide fast access.
 
@@ -34,9 +34,10 @@ English | [简体中文](https://github.com/uxiaohan/ZYCS-IMG/blob/main/README_C
 ![Sudden Rain and Heavy Mountains Picture Bed](https://uxiaohan.github.io/v2/2024/07/1721640649.png)
 ![Sudden Rain and Heavy Mountains Picture Bed](https://uxiaohan.github.io/v2/2024/07/1721640656.png)
 
+
 ### Features
 
-- Unlimited image storage, you can upload an unlimited number of images to `Imgur`
+- Unlimited image storage, you can upload an unlimited number of images to `Telegraph`
 
 - No need to purchase a server, hosted on `Cloudflare Pages`, 100,000 requests per day
 
